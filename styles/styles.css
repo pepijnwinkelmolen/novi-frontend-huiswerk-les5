@@ -18,36 +18,216 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-size: 12px;
 }
 
 /* ------------------------------- 2. Typography ----------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Merriweather", serif;
+}
+
+body {
+    font-family: "Roboto", serif;
+}
+
+button, input {
+    font-family: inherit;
+}
+
+nav a {
+    color: var(--lightgrey);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+header {
+    background-color: var(--blue);
+    color: var(--lightgrey);
+}
+
+.header-title {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.header-subtitle {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.form-container {
+    background-color: var(--blue);
+    color: var(--lightgrey);
+}
+
+footer {
+    background-color: var(--black);
+    color: var(--lightgrey);
+}
 
 /* ------------------------------- 3. Layout --------------------------------------- */
 
 /* --------------- 3.1 Reusables ----------------------- */
 
-.s-outer-container {
+:root {
+    --purple: #5722CD;
+    --blue: #4845E4;
+    --pink: #ED4385;
+    --black: #0C0C0C;
+    --lightpurple: #F2F0FF;
+    --lightgrey: #F3F6F9;
+    --grey: #7A7A7A;
+}
 
+.s-outer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .s-inner-container {
+    flex-basis: 450px;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
 }
 
 .l-outer-container {
-
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .l-inner-container {
+    flex-basis: 450px;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
 }
 
 /* --------------- 3.2 Other --------------------------- */
+
+a {
+
+}
+
+button {
+    padding: 1em 1.5em;
+    background-color: var(--pink);
+    border-radius: 1.6em;
+    border: none;
+    font-size: 1.5em;
+    color: var(--lightgrey);
+    box-shadow: 0 6px 15px 4px hsl(259, 60%, 44%);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+img {
+    width: 100%;
+}
 
 /* ------------------------------- 4. Areas ---------------------------------------- */
 
 /* --------------- 4.1 Header ------------------------- */
 
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+nav a {
+    padding: 2.5em;
+}
+
+header {
+    height: 100vh;
+}
+
+.header-content-outer {
+    height: 57vh;
+}
+
+.header-content-inner {
+    padding-top: 7em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
 /* --------------- 4.2 Introduction ------------------- */
 
+/* --------------- 4.3 Work --------------------------- */
+
+/* --------------- 4.4 Services ----------------------- */
+
+/* --------------- 4.5 Footer ------------------------- */
+
+.form-container {
+    height: calc(100vh - 6em);
+}
+
+footer {
+    height: 6em;
+}
+
+footer div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer div p {
+    font-weight: 300;
+}
+
 /* ------------------------------- 5. Media Queries -------------------------------- */
+
+@media screen and (min-width: 992px) {   /*desktop*/
+
+    nav {
+        justify-content: flex-end;
+    }
+
+    nav a {
+        font-size: 1.5em;
+    }
+
+    .s-inner-container {
+        flex-basis: 1000px;
+    }
+
+    .l-inner-container {
+        flex-basis: 1400px;
+    }
+
+    .header-title {
+        font-size: 54px;
+    }
+
+    .header-subtitle {
+        font-size: 32px;
+    }
+
+    button {
+        padding: 1em 1.5em;
+        border-radius: 1.6em;
+        font-size: 2em;
+        color: var(--lightgrey);
+    }
+
+    footer div p {
+        font-size: 1.3em;
+    }
+
+}
