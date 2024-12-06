@@ -24,12 +24,15 @@
 /* ------------------------------- 2. Typography ----------------------------------- */
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Merriweather", serif;
+    font-family: "Merriweather", "sans-serif";
 }
 
 body {
     font-family: "Roboto", serif;
 }
+
+
+
 
 button, input {
     font-family: inherit;
@@ -40,6 +43,9 @@ nav a {
     text-decoration: none;
     font-weight: 500;
 }
+
+
+
 
 header {
     background-color: var(--blue);
@@ -57,14 +63,87 @@ header {
     font-weight: 300;
 }
 
-.form-container {
+
+
+
+.section-one-inner {
+    font-size: 14px;
+    font-weight: 450;
+    color: var(--black);
+}
+
+.section-one-inner h5 {
+    font-size: 16px;
+    color: var(--purple);
+}
+
+
+
+.work-wrapper h3 {
+    color: var(--black);
+    font-size: 28px;
+}
+
+.work-wrapper p {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.work-article-link {
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--purple);
+}
+
+.work-article-link:hover {
+    cursor: pointer;
+}
+
+
+
+.services-inner-container h6 {
+    font-size: 22px;
+    color: var(--purple);
+}
+
+.services-inner-container p {
+    color: var(--grey);
+}
+
+
+
+.form-outer-container {
     background-color: var(--blue);
     color: var(--lightgrey);
 }
 
+.form-subtitle {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.input-wrapper p {
+    font-weight: 400;
+}
+
+.form-button-wrapper .button-style {
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+
+
+
 footer {
     background-color: var(--black);
     color: var(--lightgrey);
+}
+
+footer div p {
+    font-weight: 300;
 }
 
 /* ------------------------------- 3. Layout --------------------------------------- */
@@ -113,11 +192,13 @@ footer {
 
 /* --------------- 3.2 Other --------------------------- */
 
-a {
-
+.inline-link {
+    font-size: inherit;
+    color: var(--purple);
+    text-decoration: none;
 }
 
-button {
+.button-style {
     padding: 1em 1.5em;
     background-color: var(--pink);
     border-radius: 1.6em;
@@ -127,7 +208,7 @@ button {
     box-shadow: 0 6px 15px 4px hsl(259, 60%, 44%);
 }
 
-button:hover {
+.button-style:hover {
     cursor: pointer;
 }
 
@@ -150,7 +231,10 @@ nav a {
 }
 
 header {
-    height: 100vh;
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .header-content-outer {
@@ -165,16 +249,167 @@ header {
     justify-content: space-around;
 }
 
+.svg-wrapper {
+    margin: auto auto 0 auto;
+}
+
+.header-triangle {
+    width: 0;
+    height: 0;
+    border-top: 40px solid var(--blue);
+    border-right: calc(25vw - 8px) solid var(--blue);
+    border-bottom: 40px solid var(--lightgrey);
+    border-left: 25vw solid var(--lightgrey);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.header-svg-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 0;
+}
+
+.header-svg {
+    position: absolute;
+    top: calc(100vh - 145px);
+    width: 40px;
+    height: 65px;
+}
+
+.outer-triangle-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.outer-triangle {
+    width: 0;
+    height: 0;
+    border-top: 40px solid var(--blue);
+    border-right: calc(25vw) solid var(--blue);
+    border-bottom: 40px solid var(--lightgrey);
+    border-left: calc(25vw - 8px) solid var(--lightgrey);
+}
+
 /* --------------- 4.2 Introduction ------------------- */
+
+.section-one-outer {
+    height: 100vh;
+}
+
+.section-one-inner {
+    margin: 4em 0 12em 0;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.section-one-inner p {
+    margin-top: 1em;
+}
 
 /* --------------- 4.3 Work --------------------------- */
 
+.work-article, .work-article-reverse{
+    height: 615px;
+
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+}
+
+.work-wrapper {
+    margin: 20px 0;
+    height: 280px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.work-wrapper img {
+    width: 40px;
+}
+
+.work-image-wrapper {
+    height: 305px;
+}
+
+.work-image-wrapper img {
+    box-shadow: rgba(50, 50, 93, 0.25) 0 20px 27px -5px, rgba(0, 0, 0, 0.3) 0 8px 16px -8px;
+}
+
 /* --------------- 4.4 Services ----------------------- */
+
+.services-outer-container {
+    margin-top: 100px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.services-inner-container {
+    flex-basis: 330px;
+    height: 280px;
+    margin: 0 20px 30px 20px;
+    padding: 40px 26px 40px 26px;
+    border: 1px solid var(--purple);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.services-inner-container img {
+    width: 56px;
+}
 
 /* --------------- 4.5 Footer ------------------------- */
 
-.form-container {
+.form-outer-container {
     height: calc(100vh - 6em);
+}
+
+.form-inner-container {
+    margin: 6em 0 2em 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.form-styler {
+    height: 600px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.input-styler {
+    padding: 1.5em;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-button-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-button-wrapper .button-style {
+    padding: 1.8em 6em;
+    border-radius: 4em;
 }
 
 footer {
@@ -187,21 +422,9 @@ footer div {
     justify-content: center;
 }
 
-footer div p {
-    font-weight: 300;
-}
-
 /* ------------------------------- 5. Media Queries -------------------------------- */
 
 @media screen and (min-width: 992px) {   /*desktop*/
-
-    nav {
-        justify-content: flex-end;
-    }
-
-    nav a {
-        font-size: 1.5em;
-    }
 
     .s-inner-container {
         flex-basis: 1000px;
@@ -209,6 +432,21 @@ footer div p {
 
     .l-inner-container {
         flex-basis: 1400px;
+        margin: 0;
+    }
+
+    .button-style {
+        font-size: 2em;
+    }
+
+
+
+    nav {
+        justify-content: flex-end;
+    }
+
+    nav a {
+        font-size: 1.5em;
     }
 
     .header-title {
@@ -219,12 +457,102 @@ footer div p {
         font-size: 32px;
     }
 
-    button {
-        padding: 1em 1.5em;
-        border-radius: 1.6em;
-        font-size: 2em;
-        color: var(--lightgrey);
+
+
+    .section-one-inner {
+        margin: 8em 0 12em 0;
     }
+
+    .section-one-inner h5 {
+        text-align: center;
+        font-size: 38px;
+        font-weight: 520;
+    }
+
+    .section-one-inner p {
+        font-size: 24px;
+        font-weight: 450;
+        margin-top: 4em;
+    }
+
+
+
+    .work-article {
+        width: 100%;
+        height: 533px;
+        margin-bottom: 120px;
+
+        flex-direction: row;
+    }
+
+    .work-article-reverse {
+        width: 100%;
+        height: 533px;
+        margin-bottom: 120px;
+
+        flex-direction: row-reverse;
+    }
+
+    .work-image-wrapper {
+        height: 500px;
+        flex-basis: 800px;
+        flex-grow: 4;
+        flex-shrink: 4;
+    }
+
+    .work-wrapper {
+        height: 500px;
+        flex-basis: 600px;
+        flex-grow: 3;
+        flex-shrink: 3;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .work-article .work-wrapper {
+        padding: 50px 130px 50px 30px;
+    }
+
+    .work-article-reverse .work-wrapper {
+        padding: 50px 30px 50px 130px;
+    }
+
+    .work-wrapper * {
+        margin: 20px;
+    }
+
+    .work-wrapper h3 {
+        font-size: 38px;
+    }
+
+
+
+    .services-outer-container {
+        margin-bottom: 80px;
+    }
+
+    .services-inner-container {
+        flex-basis: 360px;
+        height: 320px;
+        margin: 0 20px 38px 20px;
+        padding: 40px 26px 40px 26px;
+    }
+
+    .services-inner-container img {
+        width: 76px;
+    }
+
+    .services-inner-container h6 {
+        font-size: 22px;
+    }
+
+    .services-inner-container p {
+        font-size: 15px;
+    }
+
+
 
     footer div p {
         font-size: 1.3em;
